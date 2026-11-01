@@ -1,0 +1,12 @@
+{
+  "trains": [
+    {"id":"701","name":"সুবর্ণ এক্সপ্রেস","number":"701","from":"ঢাকা","to":"চট্টগ্রাম","speed":78,"status":"running","demo":true},
+    {"id":"752","name":"জয়ন্তিকা এক্সপ্রেস","number":"752","from":"ঢাকা","to":"সিলেট","speed":64,"status":"running","demo":true},
+    {"id":"776","name":"কালনী এক্সপ্রেস","number":"776","from":"সিলেট","to":"ঢাকা","speed":72,"status":"running","demo":true},
+    {"id":"706","name":"এগারোসিন্ধুর প্রভাতী","number":"706","from":"ঢাকা","to":"কিশোরগঞ্জ","speed":0,"status":"stopped","demo":true},
+    {"id":"705","name":"একতা এক্সপ্রেস","number":"705","from":"ঢাকা","to":"দিনাজপুর","speed":68,"status":"running","demo":true},
+    {"id":"709","name":"পারাবত এক্সপ্রেস","number":"709","from":"ঢাকা","to":"সিলেট","speed":70,"status":"running","demo":true},
+    {"id":"7011","name":"চট্টলা এক্সপ্রেস","number":"801","from":"ঢাকা","to":"চট্টগ্রাম","speed":0,"status":"stopped","demo":true},
+    {"id":"791","name":"বনলতা এক্সপ্রেস","number":"791","from":"ঢাকা","to":"রাজশাহী","speed":82,"status":"running","demo":true}
+  ]
+}

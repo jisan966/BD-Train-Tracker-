@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#071b2d"><title>RailTrack BD — Live Train Map</title>
+<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar"><div class="brand"><div class="logo">🚆</div><div><strong>RailTrack BD</strong><small>বাংলাদেশের ট্রেন এক ম্যাপে</small></div></div><span class="pill"><i></i><span id="mode">ডেমো সিমুলেশন</span></span></header>
+<main>
+<section class="search-panel"><div class="search-row"><input id="search" placeholder="ট্রেন / নম্বর / স্টেশন খুঁজুন"><button id="searchBtn">খুঁজুন</button></div>
+<div class="filters"><button class="active" data-filter="all">সব ট্রেন</button><button data-filter="running">চলন্ত</button><button data-filter="stopped">স্টেশনে</button><button data-filter="express">আন্তঃনগর</button></div></section>
+<section class="map-wrap"><div id="map"></div><div class="map-tools"><button id="sat" class="active">🛰️ Satellite</button><button id="street">🗺️ Map</button><button id="locate">◎</button></div><div class="legend"><span>🚆 ট্রেন</span><span>● স্টেশন</span><span>━ রুট</span></div><div class="map-note" id="mapNote">ডেমো অবস্থান — বাস্তব GPS নয়</div></section>
+<section class="gps-panel">
+<h2>📍 লোকেশন সুবিধা</h2>
+<div class="gps-actions"><button id="myLocation">আমার লোকেশন দেখাও</button><button id="stopMyLocation" class="secondary">আমার লোকেশন বন্ধ</button></div>
+<p id="myGpsStatus">আপনার লোকেশন শুধু এই ফোনের ম্যাপে দেখাবে; সার্ভারে বা অন্যদের কাছে যাবে না।</p>
+<details class="driver-box"><summary>🚆 ট্রেনের GPS শেয়ার (অনুমতিপ্রাপ্ত ফোন)</summary>
+<p>ট্রেনের ভেতরে থাকা একটি ফোন থেকে নির্দিষ্ট ট্রেনের অবস্থান শেয়ার করুন। যাত্রীদের ফোনের GPS নিজে থেকে ট্রেনের অবস্থান হিসেবে প্রকাশ হবে না।</p>
+<label>ট্রেন নির্বাচন</label><select id="driverTrain"></select>
+<label>সার্ভার শেয়ার কী</label><input id="driverKey" type="password" autocomplete="off" placeholder="অ্যাডমিনের দেওয়া শেয়ার কী">
+<div class="gps-actions"><button id="startTrainGps">ট্রেন GPS শেয়ার শুরু</button><button id="stopTrainGps" class="secondary">শেয়ার বন্ধ</button></div>
+<p id="driverStatus">শেয়ার বন্ধ আছে। শুরু করলে GPS, ট্রেন নম্বর ও সময় সার্ভারে যাবে।</p>
+</details>
+</section>
+<section class="stats"><div><b id="total">০</b><small>মোট ট্রেন</small></div><div><b id="moving">০</b><small>চলন্ত</small></div><div><b id="stations">০</b><small>স্টেশন</small></div></section>
+<section class="content"><div class="section-heading"><div><h2>বাংলাদেশের ট্রেন</h2><p id="resultText">রুট ম্যাপে দেখানো হচ্ছে</p></div><button id="refresh">↻</button></div><div id="trainList" class="train-list"></div></section>
+<section id="details" class="details hidden"><button id="close" class="close">✕</button><div id="detailBody"></div></section>
+</main><footer>RailTrack BD v2 · GPS/API যুক্ত না হওয়া পর্যন্ত সব চলাচল সিমুলেটেড</footer>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script src="app.js"></script>
+<script>if('serviceWorker'in navigator)addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));</script>
+</body></html>

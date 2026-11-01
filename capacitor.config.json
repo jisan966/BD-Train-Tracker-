@@ -1,0 +1,8 @@
+{
+  "appId": "com.railtrackbd.app",
+  "appName": "RailTrack BD",
+  "webDir": ".",
+  "server": {
+    "androidScheme": "https"
+  }
+}
